@@ -2,11 +2,4 @@
 
 set -u
 
-exec ffmpeg -re \
--f lavfi -i :0.0 \
--vcodec libx264 \
--r 30 -g 30 \
--preset fast -vb 3000k -pix_fmt rgb24 \
--pix_fmt yuv420p \
--f flv \
-rtmps://live-api-s.facebook.com:443/rtmp/FB-856961989770697-0-Abx9fljiEfjqiXjI
+exec ffmpeg -i https://livectorprodmedia12.euwe-licdn.online/hls/0/stream.m3u8 -f flv rtmps://live-api-s.facebook.com:443/rtmp/FB-856961989770697-1-AbxmkqYUpJG1AMMa 
