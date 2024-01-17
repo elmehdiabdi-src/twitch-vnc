@@ -3,8 +3,7 @@
 set -u
 
 exec ffmpeg -re \
--f lavfi -i testsrc2=size=960x540 \
--f lavfi -i aevalsrc="sin(0*2*PI*t)" \
+-f lavfi -i :0.0 \
 -vcodec libx264 \
 -r 30 -g 30 \
 -preset fast -vb 3000k -pix_fmt rgb24 \
