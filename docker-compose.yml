@@ -11,3 +11,5 @@ services:
       WEB_LISTENING_PORT: "5980"
       APP_NAME: "Twitch OS"
     network_mode: host
+    volumes:
+      - ./vnc/videos:/videos
