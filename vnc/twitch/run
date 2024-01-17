@@ -2,4 +2,4 @@
 
 set -u
 
-exec ffmpeg -r 30 -i https://live-1n1ugl24.rmbl.ws/slot-46/7e0u-ak9b_720p/chunklist_DVR.m3u8 -framerate 5 -f flv rtmps://live-api-s.facebook.com:443/rtmp/FB-856961989770697-0-Abx9fljiEfjqiXjI 
+exec ffmpeg -re -i https://live-1n1ugl24.rmbl.ws/slot-46/7e0u-ak9b_720p/chunklist_DVR.m3u8 -c:v libx264 -c:a aac -f flv "rtmps://live-api-s.facebook.com:443/rtmp/FB-856995469767349-0-Abz10NotQ-AriCOf" 
