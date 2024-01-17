@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  vnc:
+    tty: true
+    build: ./vnc
+    environment:
+      DARK_MODE: "1"
+      KEEP_APP_RUNNING: "1"
+      VNC_PASSWORD: "maroczik"
+      WEB_LISTENING_PORT: "5980"
+      APP_NAME: "Twitch OS"
+    network_mode: host
