@@ -2,4 +2,12 @@
 
 set -u
 
-exec ffmpeg -report -re -y -f pulse -ac 2 -i default -f x11grab -framerate 24 -video_size 1280x720 -draw_mouse 0 -i $DISPLAY -map 1:v -map 0:a -c:v libx264 -c:a aac -pix_fmt yuv420p -preset medium -b:v 4M -maxrate 4M -bufsize 8M -strict -2 -g 48 -r 24 -flags +global_header -t 5 -f flv "rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo" 
+exec ffmpeg -re \
+-f lavfi -i testsrc2=size=960x540 \
+-f lavfi -i aevalsrc="sin(0*2*PI*t)" \
+-vcodec libx264 \
+-r 30 -g 30 \
+-preset fast -vb 3000k -pix_fmt rgb24 \
+-pix_fmt yuv420p \
+-f flv \
+rtmps://live-api-s.facebook.com:443/rtmp/FB-856961989770697-0-Abx9fljiEfjqiXjI
