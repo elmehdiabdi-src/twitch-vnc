@@ -1,0 +1,986 @@
+ffmpeg started on 2024-01-17 at 17:40:09
+Report written to "ffmpeg-20240117-174009.log"
+Log level: 48
+Command line:
+ffmpeg -report -re -y -f pulse -ac 2 -i default -f x11grab -framerate 24 -video_size 1280x720 -draw_mouse 0 -i :0 -map 1:v -map 0:a -c:v libx264 -c:a aac -pix_fmt yuv420p -preset medium -b:v 4M -maxrate 4M -bufsize 8M -strict -2 -g 48 -r 24 -flags +global_header -t 5 -f flv rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo
+ffmpeg version n6.1 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.2.1 (GCC) 20230801
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libharfbuzz --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-libpulse --enable-librav1e --enable-librsvg --enable-librubberband --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpl --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --en  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-re' ... matched as option 're' (read input at native frame rate; equivalent to -readrate 1) with argument '1'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'pulse'.
+Reading option '-ac' ... matched as option 'ac' (set number of audio channels) with argument '2'.
+Reading option '-i' ... matched as output url with argument 'default'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'x11grab'.
+Reading option '-framerate' ... matched as AVOption 'framerate' with argument '24'.
+Reading option '-video_size' ... matched as AVOption 'video_size' with argument '1280x720'.
+Reading option '-draw_mouse' ... matched as AVOption 'draw_mouse' with argument '0'.
+Reading option '-i' ... matched as output url with argument ':0'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '1:v'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '0:a'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx264'.
+Reading option '-c:a' ... matched as option 'c' (codec name) with argument 'aac'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'medium'.
+Reading option '-b:v' ... matched as option 'b' (video bitrate (please use -b:v)) with argument '4M'.
+Reading option '-maxrate' ... matched as AVOption 'maxrate' with argument '4M'.
+Reading option '-bufsize' ... matched as AVOption 'bufsize' with argument '8M'.
+Reading option '-strict' ...Routing option strict to both codec and muxer layer
+ matched as AVOption 'strict' with argument '-2'.
+Reading option '-g' ... matched as AVOption 'g' with argument '48'.
+Reading option '-r' ... matched as option 'r' (set frame rate (Hz value, fraction or abbreviation)) with argument '24'.
+Reading option '-flags' ... matched as AVOption 'flags' with argument '+global_header'.
+Reading option '-t' ... matched as option 't' (record or transcode "duration" seconds of audio/video) with argument '5'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'flv'.
+Reading option 'rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url default.
+Applying option re (read input at native frame rate; equivalent to -readrate 1) with argument 1.
+Applying option f (force format) with argument pulse.
+Applying option ac (set number of audio channels) with argument 2.
+Successfully parsed a group of options.
+Opening an input file: default.
+[pulse @ 0x55a39cd30600] All info found
+[aist#0:0/pcm_s16le @ 0x55a39cd5b500] Guessed Channel Layout: stereo
+Input #0, pulse, from 'default':
+  Duration: N/A, start: 1705513209.866133, bitrate: 1536 kb/s
+  Stream #0:0, 1, 1/1000000: Audio: pcm_s16le, 48000 Hz, 2 channels, s16, 1536 kb/s
+Successfully opened the file.
+Parsing a group of options: input url :0.
+Applying option f (force format) with argument x11grab.
+Successfully parsed a group of options.
+Opening an input file: :0.
+[x11grab @ 0x55a39cd5bf00] Probe buffer size limit of 5000000 bytes reached
+[x11grab @ 0x55a39cd5bf00] Stream #0: not enough frames to estimate rate; consider increasing probesize
+Input #1, x11grab, from ':0':
+  Duration: N/A, start: 1705513209.972022, bitrate: 707788 kb/s
+  Stream #1:0, 2, 1/1000000: Video: rawvideo (BGR[0] / 0x524742), bgr0, 1280x720, 707788 kb/s, 24 fps, 1000k tbr, 1000k tbn
+Successfully opened the file.
+Parsing a group of options: output url rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo.
+Applying option map (set input stream mapping) with argument 1:v.
+Applying option map (set input stream mapping) with argument 0:a.
+Applying option c:v (codec name) with argument libx264.
+Applying option c:a (codec name) with argument aac.
+Applying option pix_fmt (set pixel format) with argument yuv420p.
+Applying option b:v (video bitrate (please use -b:v)) with argument 4M.
+Applying option r (set frame rate (Hz value, fraction or abbreviation)) with argument 24.
+Applying option t (record or transcode "duration" seconds of audio/video) with argument 5.
+Applying option f (force format) with argument flv.
+Successfully parsed a group of options.
+Opening an output file: rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo.
+[out#0/flv @ 0x55a39cd64240] Adding streams from explicit maps...
+[vost#0:0/libx264 @ 0x55a39cd65780] Created video stream from input stream 1:0
+[aost#0:1/aac @ 0x55a39cd68bc0] Created audio stream from input stream 0:0
+[rtmps @ 0x55a39cd6b7c0] No default whitelist set
+[tls @ 0x55a39cd6bcc0] No default whitelist set
+[tcp @ 0x55a39cd6bec0] No default whitelist set
+[tcp @ 0x55a39cd6bec0] Original list of addresses:
+[tcp @ 0x55a39cd6bec0] Address 157.240.212.5 port 443
+[tcp @ 0x55a39cd6bec0] Interleaved list of addresses:
+[tcp @ 0x55a39cd6bec0] Address 157.240.212.5 port 443
+[tcp @ 0x55a39cd6bec0] Starting connection attempt to 157.240.212.5 port 443
+[tcp @ 0x55a39cd6bec0] Successfully connected to 157.240.212.5 port 443
+[rtmps @ 0x55a39cd6b7c0] Handshaking...
+[rtmps @ 0x55a39cd6b7c0] Type answer 3
+[rtmps @ 0x55a39cd6b7c0] Server version 1.0.5.4
+[rtmps @ 0x55a39cd6b7c0] Proto = rtmps, path = /rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo, app = rtmp, fname = FB-856951279771768-0-Abx54YIUsWgT7KSo
+[rtmps @ 0x55a39cd6b7c0] Window acknowledgement size = 5000000
+[rtmps @ 0x55a39cd6b7c0] Max sent, unacked = 5000000
+[rtmps @ 0x55a39cd6b7c0] New incoming chunk size = 4096
+[rtmps @ 0x55a39cd6b7c0] Releasing stream...
+[rtmps @ 0x55a39cd6b7c0] FCPublish stream...
+[rtmps @ 0x55a39cd6b7c0] Creating stream...
+[rtmps @ 0x55a39cd6b7c0] Sending publish command for 'FB-856951279771768-0-Abx54YIUsWgT7KSo'
+Successfully opened the file.
+Stream mapping:
+  Stream #1:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+  Stream #0:0 -> #0:1 (pcm_s16le (native) -> aac (native))
+Press [q] to stop, [?] for help
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+detected 4 logical cores
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] Setting 'video_size' to value '1280x720'
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] Setting 'pix_fmt' to value '121'
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] Setting 'time_base' to value '1/1000000'
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] Setting 'pixel_aspect' to value '0/1'
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] Setting 'frame_rate' to value '24/1'
+[graph 0 input from stream 1:0 @ 0x55a39d084fc0] w:1280 h:720 pixfmt:bgr0 tb:1/1000000 fr:24/1 sar:0/1
+[format @ 0x55a39ce4da80] Setting 'pix_fmts' to value 'yuv420p'
+[auto_scale_0 @ 0x55a39ce342c0] w:iw h:ih flags:'' interl:0
+[format @ 0x55a39ce4da80] auto-inserting filter 'auto_scale_0' between the filter 'Parsed_null_0' and the filter 'format'
+[AVFilterGraph @ 0x55a39d3c80c0] query_formats: 5 queried, 3 merged, 1 already done, 0 delayed
+[auto_scale_0 @ 0x55a39ce342c0] w:1280 h:720 fmt:bgr0 sar:0/1 -> w:1280 h:720 fmt:yuv420p sar:0/1 flags:0x00000004
+[libx264 @ 0x55a39cd65b80] using mv_range_thread = 56
+[libx264 @ 0x55a39cd65b80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[libx264 @ 0x55a39cd65b80] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x55a39cd65b80] 264 - core 164 r3108 31e19f9 - H.264/MPEG-4 AVC codec - Copyleft 2003-2023 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=6 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=48 keyint_min=4 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=cbr mbtree=1 bitrate=4000 ratetol=1.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 vbv_maxrate=4000 vbv_bufsize=8000 nal_hrd=none filler=0 ip_ratio=1.40 aq=1:1.00
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.0416667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.0416667 queue head -1 ts N/A
+[in#0/pulse @ 0x55a39cd30500] Thread message queue blocking; consider raising the thread_queue_size option (current value: 8)
+[graph_1_in_0_0 @ 0x55a39d04e500] Setting 'time_base' to value '1/48000'
+[graph_1_in_0_0 @ 0x55a39d04e500] Setting 'sample_rate' to value '48000'
+[graph_1_in_0_0 @ 0x55a39d04e500] Setting 'sample_fmt' to value 's16'
+[graph_1_in_0_0 @ 0x55a39d04e500] Setting 'channel_layout' to value 'stereo'
+[graph_1_in_0_0 @ 0x55a39d04e500] tb:1/48000 samplefmt:s16 samplerate:48000 chlayout:stereo
+[format_out_0_1 @ 0x55a39d2f8280] Setting 'sample_fmts' to value 'fltp'
+[format_out_0_1 @ 0x55a39d2f8280] Setting 'sample_rates' to value '96000|88200|64000|48000|44100|32000|24000|22050|16000|12000|11025|8000|7350'
+[format_out_0_1 @ 0x55a39d2f8280] auto-inserting filter 'auto_aresample_0' between the filter 'Parsed_anull_0' and the filter 'format_out_0_1'
+[AVFilterGraph @ 0x55a39d121ec0] query_formats: 5 queried, 6 merged, 7 already done, 0 delayed
+[auto_aresample_0 @ 0x55a39d1449c0] [SWR @ 0x55a39d532c40] Using s16p internally between filters
+[auto_aresample_0 @ 0x55a39d1449c0] ch:2 chl:stereo fmt:s16 r:48000Hz -> ch:2 chl:stereo fmt:fltp r:48000Hz
+For transform of length 1024, forward, mdct_float, flags: [aligned, out_of_place], found 2 matches:
+    1: mdct_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: 96
+    2: mdct_naive_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: -130976
+For transform of length 512, forward, fft_float, flags: [aligned, inplace, preshuf], found 5 matches:
+    1: fft_sr_ns_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 448
+    2: fft_sr_ns_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 447
+    3: fft_sr_ns_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 416
+    4: fft_pfa_ns_float_c - type: fft_float, len: [6, ∞], factors[2]: [7, 5, 3, 2, any], flags: [unaligned, inplace, out_of_place, preshuf], prio: 112
+    5: fft512_ns_float_c - type: fft_float, len: 512, factor: 2, flags: [unaligned, inplace, out_of_place, preshuf], prio: 96
+Transform tree:
+    mdct_fwd_float_c - type: mdct_float, len: 1024, factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only]
+        fft_sr_ns_float_fma3 - type: fft_float, len: 512, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+For transform of length 128, forward, mdct_float, flags: [aligned, out_of_place], found 2 matches:
+    1: mdct_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: 96
+    2: mdct_naive_fwd_float_c - type: mdct_float, len: [2, ∞], factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only], prio: -130976
+For transform of length 64, forward, fft_float, flags: [aligned, inplace, preshuf], found 5 matches:
+    1: fft_sr_ns_float_fma3 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 448
+    2: fft_sr_ns_float_avx2 - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 447
+    3: fft_sr_ns_float_avx - type: fft_float, len: [64, 131072], factor: 2, flags: [aligned, inplace, out_of_place, preshuf], prio: 416
+    4: fft_pfa_ns_float_c - type: fft_float, len: [6, ∞], factors[2]: [7, 5, 3, 2, any], flags: [unaligned, inplace, out_of_place, preshuf], prio: 112
+    5: fft64_ns_float_c - type: fft_float, len: 64, factor: 2, flags: [unaligned, inplace, out_of_place, preshuf], prio: 96
+Transform tree:
+    mdct_fwd_float_c - type: mdct_float, len: 128, factors[2]: [2, any], flags: [unaligned, out_of_place, fwd_only]
+        fft_sr_ns_float_fma3 - type: fft_float, len: 64, factor: 2, flags: [aligned, inplace, out_of_place, preshuf]
+Output #0, flv, to 'rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo':
+  Metadata:
+    encoder         : Lavf60.16.100
+  Stream #0:0, 0, 1/1000: Video: h264 ([7][0][0][0] / 0x0007), yuv420p(tv, progressive), 1280x720, q=2-31, 4000 kb/s, 24 fps, 1k tbn
+    Metadata:
+      encoder         : Lavc60.31.102 libx264
+    Side data:
+      cpb: bitrate max/min/avg: 4000000/0/4000000 buffer size: 8000000 vbv_delay: N/A
+  Stream #0:1, 0, 1/1000: Audio: aac (LC) ([10][0][0][0] / 0x000A), 48000 Hz, stereo, fltp, 128 kb/s
+    Metadata:
+      encoder         : Lavc60.31.102 aac
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.0308333
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.0213333 queue head -1 ts N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=N/A bitrate=N/A speed=N/A    [rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[in#1/x11grab @ 0x55a39cd5be00] Thread message queue blocking; consider raising the thread_queue_size option (current value: 8)
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.0833333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.0833333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.0630208
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.0426667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.095
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.0645208 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.0861667 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** 37 dup!
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.125
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.125 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.166667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.166667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.208333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.208333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.25
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.25 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.291667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.291667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.333333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.333333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.375
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.375 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.416667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.416667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.458333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.458333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.5
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.5 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.541667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.541667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.583333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.583333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.625
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.625 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.666667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.666667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.708333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.708333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.75
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.75 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.791667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.791667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.833333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.833333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.875
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.875 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.916667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.916667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 0.958333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 0.958333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.04167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.04167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.08333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.08333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.125
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.125 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.16667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.16667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.20833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.20833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.25
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.25 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.29167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.29167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.33333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.33333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.375
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.375 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.41667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.41667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.45833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.45833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.5
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.5 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.54167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.54167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.58333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.58333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.625
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.625 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.66667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.66667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.126875
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.1075 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.152792
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.129042 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.150458 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.1845
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.171792 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.216167
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.193167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.2145 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.247833
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.235833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.279479
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.257167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.278479 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.311125
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.299812 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.342771
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.321125 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.342438 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.374417
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.363771 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.406083
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.385083 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.438604
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.406417 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.427771 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.470271
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.449104 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.501938
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.470438 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.491771 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.533604
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.513104 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.565229
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.534438 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.555729 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.596917
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.577063 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.628604
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.598417 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.619771 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.660271
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.641104 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.691937
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.662438 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.683771 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.723604
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.705104 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.755292
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.726437 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.747792 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.786958
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.769125 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.818646
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.790458 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.811812 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.850333
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.833146 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.882
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.8545 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.875833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.913667
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.897167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.9455
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.9185 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.939833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 0.977167
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.961167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.00885
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 0.9825 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.00385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.04052
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.02519 queue head -1 ts N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:00.96 bitrate=   3.4kbits/s dup=37 drop=0 speed=1.74x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.07219
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.04652 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.06785 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.10385
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.08919 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.13552
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.11052 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.13185 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.16719
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.15319 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.19885
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.17452 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.19585 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.2305
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.21719 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.26217
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.2385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.25983 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.29381
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.28117 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.32546
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.30248 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.32379 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.35712
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.34512 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.38879
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.36646 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.38779 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.42046
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.40912 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.45212
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.43046 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.45179 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.48379
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.47313 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.51544
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.49446 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.54794
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.51577 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.5371 queue head -1 ts N/A
+frame=    0 fps=0.0 q=0.0 size=       0kB time=00:00:01.47 bitrate=   2.2kbits/s dup=37 drop=0 speed= 1.4x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.5796
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.55844 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.61125
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.57977 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.60108 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.64292
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.62242 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.67456
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.64375 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.66506 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.70833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.70833 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.75
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.75 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 42 at ts 39
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 42 at ts 39
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 42 at ts 39
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 42 at ts 39
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.70623
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.6864 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 42 at ts 39
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.79167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.79167 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.73787
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.70773 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.72904 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** 24 dup!
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.83333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.83333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.875
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.875 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.91667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.91667 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 1.95833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 1.95833 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.04167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.04167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.08333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.08333 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.125
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.125 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   0 QP=10.58 NAL=3 Slice:I Poc:0   I:3600 P:0    SKIP:0    size=110113 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.16667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.16667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   1 QP=13.22 NAL=2 Slice:P Poc:8   I:18   P:413  SKIP:3169 size=6047 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.20833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.20833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   2 QP=17.00 NAL=2 Slice:B Poc:4   I:0    P:58   SKIP:3542 size=69 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.25
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.25 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   3 QP=19.00 NAL=0 Slice:B Poc:2   I:0    P:40   SKIP:3560 size=63 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.29167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.29167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   4 QP=19.00 NAL=0 Slice:B Poc:6   I:0    P:4    SKIP:3596 size=41 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.33333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.33333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   5 QP=12.05 NAL=2 Slice:P Poc:16  I:42   P:465  SKIP:3093 size=6779 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.375
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.375 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   6 QP=16.00 NAL=2 Slice:B Poc:12  I:0    P:100  SKIP:3500 size=96 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.41667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.41667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   7 QP=21.00 NAL=0 Slice:B Poc:10  I:0    P:261  SKIP:3339 size=175 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.45833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.45833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   8 QP=18.00 NAL=0 Slice:B Poc:14  I:0    P:7    SKIP:3593 size=46 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.5
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.5 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=   9 QP=10.18 NAL=2 Slice:P Poc:24  I:127  P:831  SKIP:2642 size=12270 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.54167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.54167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  10 QP=14.00 NAL=2 Slice:B Poc:20  I:0    P:164  SKIP:3436 size=133 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.58333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.58333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  11 QP=19.00 NAL=0 Slice:B Poc:18  I:0    P:440  SKIP:3160 size=229 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.625
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.625 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  12 QP=16.00 NAL=0 Slice:B Poc:22  I:0    P:1    SKIP:3599 size=37 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.66667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.66667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  13 QP=8.90 NAL=2 Slice:P Poc:32  I:128  P:1009 SKIP:2463 size=18469 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.70833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.70833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  14 QP=14.60 NAL=2 Slice:B Poc:28  I:3    P:533  SKIP:3064 size=269 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.75
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.75 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  15 QP=17.00 NAL=0 Slice:B Poc:26  I:0    P:538  SKIP:3062 size=263 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.79167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.79167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  16 QP=14.00 NAL=0 Slice:B Poc:30  I:0    P:3    SKIP:3597 size=38 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.83333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.83333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  17 QP=6.43 NAL=2 Slice:P Poc:40  I:85   P:1096 SKIP:2419 size=21071 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.78621
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.75038 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.77171 queue head -1 ts N/A
+frame=   18 fps=8.7 q=7.0 size=     163kB time=00:00:01.70 bitrate= 782.3kbits/s dup=60 drop=5 speed=0.829x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.81785
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.79304 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.81435 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.86535
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.83569 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.85702 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.88867
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.87835 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.92031
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.89967 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.95198
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.92098 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.94231 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 1.98362
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.96365 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.01529
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 1.98496 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.00629 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.04694
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.02763 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.07867
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.04894 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.07033 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.11025
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.09167 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.14185
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.11292 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.13419 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.17348
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.15552 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.20512
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.17681 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.19813 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.23679
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.21946 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.26846
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.24079 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.26212 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.30012
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.28346 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.33179
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.30479 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.32612 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.36346
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.34746 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.39512
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.36879 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.39012 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.42679
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.41146 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.45846
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.43279 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.45412 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.49096
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.47546 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.52265
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.49679 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.51815 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.55429
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.53948 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.58513
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.56079 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.58213 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.61679
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.60346 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.64846
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.62479 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.64613 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.68012
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.66746 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.71179
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.68879 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.71013 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.74344
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.73146 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.7751
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.75277 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.7741 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.80673
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.79544 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.8384
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.81673 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.83806 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] Clipping frame in rate conversion by 0.522041
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.875
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.875 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  18 QP=7.70 NAL=2 Slice:B Poc:36  I:3    P:501  SKIP:3096 size=265 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.87006
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.8594 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.91667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.91667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  19 QP=15.00 NAL=0 Slice:B Poc:34  I:0    P:518  SKIP:3082 size=251 bytes
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 70 at ts 68
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 70 at ts 68
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 2.95833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 2.95833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  20 QP=12.00 NAL=0 Slice:B Poc:38  I:0    P:2    SKIP:3598 size=40 bytes
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 71 at ts 68
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.90173
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.88073 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 71 at ts 68
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 71 at ts 68
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.9334
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.90206 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.9234 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** 24 dup!
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  21 QP=3.87 NAL=2 Slice:P Poc:48  I:116  P:956  SKIP:2528 size=22748 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.04167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.04167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  22 QP=8.00 NAL=2 Slice:B Poc:44  I:3    P:456  SKIP:3141 size=233 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.08333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.08333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  23 QP=13.00 NAL=0 Slice:B Poc:42  I:1    P:448  SKIP:3151 size=223 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.125
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.125 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  24 QP=10.00 NAL=0 Slice:B Poc:46  I:0    P:5    SKIP:3595 size=42 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.16667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.16667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  25 QP=1.93 NAL=2 Slice:P Poc:56  I:147  P:882  SKIP:2571 size=22675 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.20833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.20833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  26 QP=6.00 NAL=2 Slice:B Poc:52  I:0    P:381  SKIP:3219 size=192 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.25
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.25 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  27 QP=11.00 NAL=0 Slice:B Poc:50  I:0    P:368  SKIP:3232 size=177 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.29167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.29167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  28 QP=8.00 NAL=0 Slice:B Poc:54  I:0    P:1    SKIP:3599 size=38 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.33333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.33333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  29 QP=3.60 NAL=2 Slice:P Poc:64  I:3    P:200  SKIP:3397 size=2217 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.375
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.375 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  30 QP=7.00 NAL=2 Slice:B Poc:60  I:2    P:114  SKIP:3484 size=118 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.41667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.41667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  31 QP=9.00 NAL=0 Slice:B Poc:58  I:0    P:106  SKIP:3494 size=105 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.45833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.45833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  32 QP=10.00 NAL=0 Slice:B Poc:62  I:0    P:2    SKIP:3598 size=38 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.5
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.5 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  33 QP=1.73 NAL=2 Slice:P Poc:72  I:3    P:124  SKIP:3473 size=2196 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.54167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.54167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  34 QP=8.00 NAL=2 Slice:B Poc:68  I:1    P:95   SKIP:3504 size=103 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.58333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.58333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  35 QP=11.00 NAL=0 Slice:B Poc:66  I:0    P:83   SKIP:3517 size=88 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.625
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.625 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  36 QP=9.00 NAL=0 Slice:B Poc:70  I:0    P:2    SKIP:3598 size=38 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.66667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.66667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  37 QP=13.63 NAL=2 Slice:P Poc:80  I:897  P:156  SKIP:2547 size=47569 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.70833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.70833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  38 QP=15.55 NAL=2 Slice:B Poc:76  I:1    P:380  SKIP:3219 size=733 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.75
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.75 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  39 QP=12.00 NAL=0 Slice:B Poc:74  I:0    P:183  SKIP:3417 size=93 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.79167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.79167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  40 QP=15.64 NAL=0 Slice:B Poc:78  I:0    P:114  SKIP:3486 size=191 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.83333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.83333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  41 QP=11.70 NAL=2 Slice:P Poc:88  I:834  P:193  SKIP:2573 size=121565 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.875
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.875 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  42 QP=15.81 NAL=2 Slice:B Poc:84  I:99   P:288  SKIP:3213 size=7678 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.91667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.91667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  43 QP=20.81 NAL=0 Slice:B Poc:82  I:1    P:183  SKIP:3416 size=575 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 3.95833
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 3.95833 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  44 QP=21.00 NAL=0 Slice:B Poc:86  I:0    P:124  SKIP:3476 size=81 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 4
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 4 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  45 QP=22.00 NAL=2 Slice:P Poc:94  I:0    P:0    SKIP:3600 size=43 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.96506
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.94473 queue head -1 ts N/A
+frame=   39 fps= 14 q=9.0 size=     296kB time=00:00:02.88 bitrate= 840.4kbits/s dup=83 drop=10 speed=1.03x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 2.99673
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.96606 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 2.9874 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.04588
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.00873 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.03004 queue head -1 ts N/A
+frame=   43 fps= 13 q=9.0 size=     418kB time=00:00:02.96 bitrate=1154.8kbits/s dup=83 drop=10 speed=0.899x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.07754
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.05137 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.07271 queue head -1 ts N/A
+frame=   45 fps= 11 q=9.0 size=     427kB time=00:00:03.00 bitrate=1163.3kbits/s dup=83 drop=10 speed=0.746x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.12671
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.09404 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.11537 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.14835
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.13671 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.18002
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.15802 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.17935 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.21165
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.20069 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.24331
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.22198 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.24331 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.27498
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.26465 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.30667
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.28598 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.33829
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.30733 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.32862 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.36992
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.34996 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.40235
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.37125 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.39252 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.434
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.41385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.46565
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.43517 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.45648 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.49731
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.47781 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.529
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.49915 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.5205 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.56069
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.54183 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.59235
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.56319 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.58452 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.62402
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.60585 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.65569
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.62719 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.64852 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.68735
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.66985 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.71902
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.69119 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.71252 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.75069
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.73385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.78235
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.75519 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.77652 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.81404
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.79785 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.86154
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.81921 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.84054 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.89321
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.86187 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.88321 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.92487
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.90454 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.95654
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.92588 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.94721 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 3.98821
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.96854 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.01985
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 3.98988 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.01119 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] Clipping frame in rate conversion by 0.147926
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 4.04167
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 4.04167 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  46 QP=22.00 NAL=2 Slice:B Poc:90  I:0    P:7    SKIP:3593 size=41 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.05152
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.03252 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 4.08333
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 4.08333 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  47 QP=22.00 NAL=0 Slice:B Poc:92  I:0    P:6    SKIP:3594 size=38 bytes
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 4.125
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 4.125 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  48 QP=8.48 NAL=3 Slice:I Poc:0   I:3600 P:0    SKIP:0    size=179497 bytes
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 99 at ts 96
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 99 at ts 96
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.08319
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.05385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.07519 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 99 at ts 97
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 99 at ts 97
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[vost#0:0/libx264 @ 0x55a39cd65780] *** dropping frame 99 at ts 97
+[out#0/flv @ 0x55a39cd64240] sq: send 0 ts 4.16667
+[out#0/flv @ 0x55a39cd64240] sq: receive 0 ts 4.16667 queue head -1 ts N/A
+[libx264 @ 0x55a39cd65b80] frame=  49 QP=9.76 NAL=2 Slice:P Poc:8   I:101  P:959  SKIP:2540 size=14116 bytes
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.11485
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.09652 queue head -1 ts N/A
+[rawvideo @ 0x55a39cd64740] PACKET SIZE: 3686400, STRIDE: 5120
+[out_0_0 @ 0x55a39d22c680] EOF on sink link out_0_0:default.
+[out#0/flv @ 0x55a39cd64240] sq: 0 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish 0; head ts 4.16667
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.14652
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.11785 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.13919 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.17819
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.16052 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.20985
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.18185 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.20319 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.25819
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.22452 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.24585 queue head -1 ts N/A
+frame=   50 fps=9.2 q=7.0 size=     606kB time=00:00:04.18 bitrate=1187.8kbits/s dup=83 drop=15 speed=0.768x    [out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.30571
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.26719 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.28854 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.33735
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.30987 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.33119 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.38652
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.35252 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.37385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.40819
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.39519 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.43985
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.41652 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.43785 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.47152
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.45919 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.50319
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.48052 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.50185 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.53485
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.52319 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.56652
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.54452 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.56585 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.59819
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.58719 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.62985
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.60852 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.62985 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.66152
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.65119 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.69319
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.67252 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.72485
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.69385 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.71519 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.75652
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.73652 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.78819
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.75785 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.77919 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.81987
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.80052 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.85154
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.82187 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.84321 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.88321
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.86454 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.91487
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.88587 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.90721 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.94654
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.92854 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 4.97821
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.94987 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.97121 queue head -1 ts N/A
+[out#0/flv @ 0x55a39cd64240] sq: send 1 ts 5
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 4.99254 queue head -1 ts N/A
+[out_0_1 @ 0x55a39d1d44c0] EOF on sink link out_0_1:default.
+[out#0/flv @ 0x55a39cd64240] sq: 1 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish 1; head ts 5
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+No more output streams to write to, finishing.
+[aist#0:0/pcm_s16le @ 0x55a39cd5b500] Decoder thread received EOF packet
+[aist#0:0/pcm_s16le @ 0x55a39cd5b500] Decoder returned EOF, finishing
+[aist#0:0/pcm_s16le @ 0x55a39cd5b500] Terminating decoder thread
+[vist#1:0/rawvideo @ 0x55a39cd645c0] Decoder thread received EOF packet
+[vist#1:0/rawvideo @ 0x55a39cd645c0] Decoder returned EOF, finishing
+[vist#1:0/rawvideo @ 0x55a39cd645c0] Terminating decoder thread
+[out#0/flv @ 0x55a39cd64240] sq: 0 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[out#0/flv @ 0x55a39cd64240] sq: 1 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[out#0/flv @ 0x55a39cd64240] sq: 0 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[libx264 @ 0x55a39cd65b80] frame=  50 QP=10.00 NAL=2 Slice:B Poc:4   I:0    P:259  SKIP:3341 size=166 bytes
+[libx264 @ 0x55a39cd65b80] frame=  51 QP=12.00 NAL=0 Slice:B Poc:2   I:0    P:1    SKIP:3599 size=39 bytes
+[libx264 @ 0x55a39cd65b80] frame=  52 QP=12.00 NAL=0 Slice:B Poc:6   I:0    P:1    SKIP:3599 size=38 bytes
+[libx264 @ 0x55a39cd65b80] frame=  53 QP=9.12 NAL=2 Slice:P Poc:16  I:85   P:460  SKIP:3055 size=8049 bytes
+[libx264 @ 0x55a39cd65b80] frame=  54 QP=9.00 NAL=2 Slice:B Poc:12  I:5    P:260  SKIP:3335 size=193 bytes
+[libx264 @ 0x55a39cd65b80] frame=  55 QP=15.00 NAL=0 Slice:B Poc:10  I:0    P:241  SKIP:3359 size=163 bytes
+[libx264 @ 0x55a39cd65b80] frame=  56 QP=10.00 NAL=0 Slice:B Poc:14  I:0    P:4    SKIP:3596 size=41 bytes
+[libx264 @ 0x55a39cd65b80] scene cut at 95 Icost:2185707 Pcost:2151053 ratio:0.0159 bias:0.3932 gop:47 (imb:3289 pmb:65)
+[libx264 @ 0x55a39cd65b80] frame=  57 QP=4.34 NAL=2 Slice:P Poc:24  I:258  P:1524 SKIP:1818 size=49923 bytes
+[libx264 @ 0x55a39cd65b80] frame=  58 QP=6.00 NAL=2 Slice:B Poc:20  I:0    P:412  SKIP:3188 size=213 bytes
+[libx264 @ 0x55a39cd65b80] frame=  59 QP=13.00 NAL=0 Slice:B Poc:18  I:0    P:418  SKIP:3182 size=201 bytes
+[libx264 @ 0x55a39cd65b80] frame=  60 QP=8.00 NAL=0 Slice:B Poc:22  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  61 QP=4.54 NAL=2 Slice:P Poc:32  I:5    P:367  SKIP:3228 size=4085 bytes
+[libx264 @ 0x55a39cd65b80] frame=  62 QP=8.88 NAL=2 Slice:B Poc:28  I:2    P:262  SKIP:3336 size=209 bytes
+[libx264 @ 0x55a39cd65b80] frame=  63 QP=11.00 NAL=0 Slice:B Poc:26  I:0    P:215  SKIP:3385 size=168 bytes
+[libx264 @ 0x55a39cd65b80] frame=  64 QP=11.00 NAL=0 Slice:B Poc:30  I:0    P:2    SKIP:3598 size=39 bytes
+[libx264 @ 0x55a39cd65b80] frame=  65 QP=3.48 NAL=2 Slice:P Poc:40  I:1090 P:148  SKIP:2362 size=82287 bytes
+[libx264 @ 0x55a39cd65b80] frame=  66 QP=11.00 NAL=2 Slice:B Poc:36  I:0    P:103  SKIP:3497 size=83 bytes
+[libx264 @ 0x55a39cd65b80] frame=  67 QP=13.00 NAL=0 Slice:B Poc:34  I:0    P:3    SKIP:3597 size=40 bytes
+[libx264 @ 0x55a39cd65b80] frame=  68 QP=14.00 NAL=0 Slice:B Poc:38  I:0    P:100  SKIP:3500 size=71 bytes
+[libx264 @ 0x55a39cd65b80] frame=  69 QP=9.00 NAL=2 Slice:P Poc:48  I:0    P:0    SKIP:3600 size=46 bytes
+[libx264 @ 0x55a39cd65b80] frame=  70 QP=14.00 NAL=2 Slice:B Poc:44  I:0    P:0    SKIP:3600 size=39 bytes
+[libx264 @ 0x55a39cd65b80] frame=  71 QP=16.00 NAL=0 Slice:B Poc:42  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  72 QP=17.00 NAL=0 Slice:B Poc:46  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  73 QP=3.58 NAL=2 Slice:P Poc:56  I:0    P:251  SKIP:3349 size=4787 bytes
+[libx264 @ 0x55a39cd65b80] frame=  74 QP=12.00 NAL=2 Slice:B Poc:52  I:0    P:86   SKIP:3514 size=82 bytes
+[libx264 @ 0x55a39cd65b80] frame=  75 QP=16.00 NAL=0 Slice:B Poc:50  I:0    P:80   SKIP:3520 size=82 bytes
+[libx264 @ 0x55a39cd65b80] frame=  76 QP=12.00 NAL=0 Slice:B Poc:54  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  77 QP=2.27 NAL=2 Slice:P Poc:64  I:26   P:299  SKIP:3275 size=3834 bytes
+[libx264 @ 0x55a39cd65b80] frame=  78 QP=7.00 NAL=2 Slice:B Poc:60  I:0    P:199  SKIP:3401 size=140 bytes
+[libx264 @ 0x55a39cd65b80] frame=  79 QP=11.00 NAL=0 Slice:B Poc:58  I:0    P:189  SKIP:3411 size=132 bytes
+[libx264 @ 0x55a39cd65b80] frame=  80 QP=8.00 NAL=0 Slice:B Poc:62  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  81 QP=1.98 NAL=2 Slice:P Poc:72  I:8    P:300  SKIP:3292 size=3569 bytes
+[libx264 @ 0x55a39cd65b80] frame=  82 QP=5.00 NAL=2 Slice:B Poc:68  I:0    P:193  SKIP:3407 size=147 bytes
+[libx264 @ 0x55a39cd65b80] frame=  83 QP=9.00 NAL=0 Slice:B Poc:66  I:0    P:184  SKIP:3416 size=143 bytes
+[libx264 @ 0x55a39cd65b80] frame=  84 QP=6.00 NAL=0 Slice:B Poc:70  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  85 QP=1.88 NAL=2 Slice:P Poc:80  I:2    P:300  SKIP:3298 size=4414 bytes
+[libx264 @ 0x55a39cd65b80] frame=  86 QP=3.00 NAL=2 Slice:B Poc:76  I:0    P:226  SKIP:3374 size=157 bytes
+[libx264 @ 0x55a39cd65b80] frame=  87 QP=6.00 NAL=0 Slice:B Poc:74  I:0    P:213  SKIP:3387 size=150 bytes
+[libx264 @ 0x55a39cd65b80] frame=  88 QP=4.00 NAL=0 Slice:B Poc:78  I:0    P:1    SKIP:3599 size=39 bytes
+[libx264 @ 0x55a39cd65b80] frame=  89 QP=1.06 NAL=2 Slice:P Poc:88  I:3    P:74   SKIP:3523 size=1362 bytes
+[libx264 @ 0x55a39cd65b80] frame=  90 QP=2.00 NAL=2 Slice:B Poc:84  I:0    P:56   SKIP:3544 size=82 bytes
+[libx264 @ 0x55a39cd65b80] frame=  91 QP=5.00 NAL=0 Slice:B Poc:82  I:0    P:55   SKIP:3545 size=80 bytes
+[libx264 @ 0x55a39cd65b80] frame=  92 QP=4.00 NAL=0 Slice:B Poc:86  I:0    P:0    SKIP:3600 size=37 bytes
+[libx264 @ 0x55a39cd65b80] frame=  93 QP=3.54 NAL=2 Slice:P Poc:92  I:39   P:90   SKIP:3471 size=711 bytes
+[libx264 @ 0x55a39cd65b80] frame=  94 QP=4.00 NAL=0 Slice:B Poc:90  I:0    P:45   SKIP:3555 size=81 bytes
+[libx264 @ 0x55a39cd65b80] frame=  95 QP=2.92 NAL=3 Slice:I Poc:0   I:3600 P:0    SKIP:0    size=119680 bytes
+[libx264 @ 0x55a39cd65b80] frame=  96 QP=4.81 NAL=2 Slice:P Poc:8   I:0    P:37   SKIP:3563 size=238 bytes
+[libx264 @ 0x55a39cd65b80] frame=  97 QP=3.19 NAL=2 Slice:B Poc:4   I:0    P:18   SKIP:3582 size=77 bytes
+[libx264 @ 0x55a39cd65b80] frame=  98 QP=5.00 NAL=0 Slice:B Poc:2   I:0    P:13   SKIP:3587 size=56 bytes
+[libx264 @ 0x55a39cd65b80] frame=  99 QP=5.00 NAL=0 Slice:B Poc:6   I:0    P:3    SKIP:3597 size=42 bytes
+[out#0/flv @ 0x55a39cd64240] sq: 0 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[out#0/flv @ 0x55a39cd64240] sq: 1 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[out#0/flv @ 0x55a39cd64240] sq: receive 1 ts 5 queue head -1 ts N/A
+[aac @ 0x55a39cd68f80] Trying to remove 666 more samples than there are in the queue
+[out#0/flv @ 0x55a39cd64240] sq: 1 EOF
+[out#0/flv @ 0x55a39cd64240] sq: finish queue
+[out#0/flv @ 0x55a39cd64240] All streams finished
+[out#0/flv @ 0x55a39cd64240] Terminating muxer thread
+[flv @ 0x55a39cd64ec0] Failed to update header with correct duration.
+[flv @ 0x55a39cd64ec0] Failed to update header with correct filesize.
+[AVIOContext @ 0x55a39d083c00] Statistics: 974396 bytes written, 0 seeks, 356 writeouts
+[rtmps @ 0x55a39cd6b7c0] UnPublishing stream...
+[rtmps @ 0x55a39cd6b7c0] Deleting stream...
+[out#0/flv @ 0x55a39cd64240] Output file #0 (rtmps://live-api-s.facebook.com:443/rtmp/FB-856951279771768-0-Abx54YIUsWgT7KSo):
+[out#0/flv @ 0x55a39cd64240]   Output stream #0:0 (video): 100 frames encoded; 100 packets muxed (887411 bytes); 
+[out#0/flv @ 0x55a39cd64240]   Output stream #0:1 (audio): 235 frames encoded (239974 samples); 236 packets muxed (80544 bytes); 
+[out#0/flv @ 0x55a39cd64240]   Total: 336 packets (967955 bytes) muxed
+[out#0/flv @ 0x55a39cd64240] video:867kB audio:79kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.665423%
+frame=  100 fps= 13 q=-1.0 Lsize=     952kB time=00:00:04.99 bitrate=1561.4kbits/s dup=83 drop=15 speed=0.625x    
+[libx264 @ 0x55a39cd65b80] frame I:3     Avg QP: 7.32  size:136430
+[libx264 @ 0x55a39cd65b80] frame P:25    Avg QP: 6.74  size: 18443
+[libx264 @ 0x55a39cd65b80] frame B:72    Avg QP:11.56  size:   226
+[libx264 @ 0x55a39cd65b80] consecutive B-frames:  3.0%  2.0%  3.0% 92.0%
+[libx264 @ 0x55a39cd65b80] mb I  I16..4: 59.9%  4.4% 35.7%
+[libx264 @ 0x55a39cd65b80] mb P  I16..4:  2.6%  0.0%  1.8%  P16..4: 11.8%  0.2%  0.3%  0.0%  0.0%    skip:83.2%
+[libx264 @ 0x55a39cd65b80] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  3.9%  0.0%  0.0%  direct: 0.0%  skip:96.0%  L0: 7.5% L1:92.5% BI: 0.1%
+[libx264 @ 0x55a39cd65b80] 8x8 transform intra:3.5% inter:32.7%
+[libx264 @ 0x55a39cd65b80] coded y,uvDC,uvAC intra: 26.0% 35.5% 33.7% inter: 1.6% 2.4% 2.2%
+[libx264 @ 0x55a39cd65b80] i16 v,h,dc,p: 64% 34%  2%  0%
+[libx264 @ 0x55a39cd65b80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 52% 20% 27%  0%  0%  0%  0%  0%  0%
+[libx264 @ 0x55a39cd65b80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 37% 26% 16%  2%  4%  4%  4%  4%  4%
+[libx264 @ 0x55a39cd65b80] i8c dc,h,v,p: 61% 26% 11%  2%
+[libx264 @ 0x55a39cd65b80] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0x55a39cd65b80] ref P L0: 97.1%  0.4%  1.4%  1.0%
+[libx264 @ 0x55a39cd65b80] ref B L0: 90.4%  7.2%  2.4%
+[libx264 @ 0x55a39cd65b80] ref B L1: 99.8%  0.2%
+[libx264 @ 0x55a39cd65b80] kb/s:1702.37
+[aac @ 0x55a39cd68f80] Qavg: 622.553
+[in#0/pulse @ 0x55a39cd30500] Terminating demuxer thread
+[in#0/pulse @ 0x55a39cd30500] Input file #0 (default):
+[in#0/pulse @ 0x55a39cd30500]   Input stream #0:0 (audio): 165 packets read (1022592 bytes); 156 frames decoded; 0 decode errors (241968 samples); 
+[in#0/pulse @ 0x55a39cd30500]   Total: 165 packets (1022592 bytes) demuxed
+[in#1/x11grab @ 0x55a39cd5be00] Terminating demuxer thread
+[in#1/x11grab @ 0x55a39cd5be00] Input file #1 (:0):
+[in#1/x11grab @ 0x55a39cd5be00]   Input stream #1:0 (video): 42 packets read (154828800 bytes); 33 frames decoded; 0 decode errors; 
+[in#1/x11grab @ 0x55a39cd5be00]   Total: 42 packets (154828800 bytes) demuxed

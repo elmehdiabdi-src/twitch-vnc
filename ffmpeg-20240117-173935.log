@@ -1,0 +1,69 @@
+ffmpeg started on 2024-01-17 at 17:39:35
+Report written to "ffmpeg-20240117-173935.log"
+Log level: 48
+Command line:
+ffmpeg -report -re -y -f pulse -ac 2 -i default -f x11grab -framerate 24 -video_size 1280x720 -draw_mouse 0 -i :44 -map 1:v -map 0:a -c:v libx264 -c:a aac -pix_fmt yuv420p -preset medium -b:v 4M -maxrate 4M -bufsize 8M -strict -2 -g 48 -r 24 -flags +global_header -t 5 -f flv "rtmps://live-api-s.facebook.com:443/rtmp/******?*****"
+ffmpeg version n6.1 Copyright (c) 2000-2023 the FFmpeg developers
+  built with gcc 13.2.1 (GCC) 20230801
+  configuration: --prefix=/usr --disable-debug --disable-static --disable-stripping --enable-amf --enable-avisynth --enable-cuda-llvm --enable-lto --enable-fontconfig --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libdav1d --enable-libdrm --enable-libfreetype --enable-libfribidi --enable-libgsm --enable-libharfbuzz --enable-libiec61883 --enable-libjack --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libplacebo --enable-libpulse --enable-librav1e --enable-librsvg --enable-librubberband --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtheora --enable-libv4l2 --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpl --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxcb --en  libavutil      58. 29.100 / 58. 29.100
+  libavcodec     60. 31.102 / 60. 31.102
+  libavformat    60. 16.100 / 60. 16.100
+  libavdevice    60.  3.100 / 60.  3.100
+  libavfilter     9. 12.100 /  9. 12.100
+  libswscale      7.  5.100 /  7.  5.100
+  libswresample   4. 12.100 /  4. 12.100
+  libpostproc    57.  3.100 / 57.  3.100
+Splitting the commandline.
+Reading option '-report' ... matched as option 'report' (generate a report) with argument '1'.
+Reading option '-re' ... matched as option 're' (read input at native frame rate; equivalent to -readrate 1) with argument '1'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'pulse'.
+Reading option '-ac' ... matched as option 'ac' (set number of audio channels) with argument '2'.
+Reading option '-i' ... matched as output url with argument 'default'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'x11grab'.
+Reading option '-framerate' ... matched as AVOption 'framerate' with argument '24'.
+Reading option '-video_size' ... matched as AVOption 'video_size' with argument '1280x720'.
+Reading option '-draw_mouse' ... matched as AVOption 'draw_mouse' with argument '0'.
+Reading option '-i' ... matched as output url with argument ':44'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '1:v'.
+Reading option '-map' ... matched as option 'map' (set input stream mapping) with argument '0:a'.
+Reading option '-c:v' ... matched as option 'c' (codec name) with argument 'libx264'.
+Reading option '-c:a' ... matched as option 'c' (codec name) with argument 'aac'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'medium'.
+Reading option '-b:v' ... matched as option 'b' (video bitrate (please use -b:v)) with argument '4M'.
+Reading option '-maxrate' ... matched as AVOption 'maxrate' with argument '4M'.
+Reading option '-bufsize' ... matched as AVOption 'bufsize' with argument '8M'.
+Reading option '-strict' ...Routing option strict to both codec and muxer layer
+ matched as AVOption 'strict' with argument '-2'.
+Reading option '-g' ... matched as AVOption 'g' with argument '48'.
+Reading option '-r' ... matched as option 'r' (set frame rate (Hz value, fraction or abbreviation)) with argument '24'.
+Reading option '-flags' ... matched as AVOption 'flags' with argument '+global_header'.
+Reading option '-t' ... matched as option 't' (record or transcode "duration" seconds of audio/video) with argument '5'.
+Reading option '-f' ... matched as option 'f' (force format) with argument 'flv'.
+Reading option 'rtmps://live-api-s.facebook.com:443/rtmp/******?*****' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option report (generate a report) with argument 1.
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url default.
+Applying option re (read input at native frame rate; equivalent to -readrate 1) with argument 1.
+Applying option f (force format) with argument pulse.
+Applying option ac (set number of audio channels) with argument 2.
+Successfully parsed a group of options.
+Opening an input file: default.
+[pulse @ 0x557d744b7600] All info found
+[aist#0:0/pcm_s16le @ 0x557d744e2500] Guessed Channel Layout: stereo
+Input #0, pulse, from 'default':
+  Duration: N/A, start: 1705513175.462866, bitrate: 1536 kb/s
+  Stream #0:0, 1, 1/1000000: Audio: pcm_s16le, 48000 Hz, 2 channels, s16, 1536 kb/s
+Successfully opened the file.
+Parsing a group of options: input url :44.
+Applying option f (force format) with argument x11grab.
+Successfully parsed a group of options.
+Opening an input file: :44.
+[x11grab @ 0x557d744e2f00] Cannot open display :44, error 1.
+[in#1 @ 0x557d744e2e00] Error opening input: Input/output error
+Error opening input file :44.
+Error opening input files: Input/output error
