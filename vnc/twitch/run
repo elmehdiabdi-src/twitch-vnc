@@ -1,1 +1,5 @@
-./ffmpeg -headers $'Referer: https://www.aflam4you.pro/' -re -i "https://cdn12.kooooora4you.live/p/3166/live/bnnnn111111prroooolive.m3u8?userip=MTk2Ljc1LjgxLjE4MQ==&expires=6727874139&signature=02c0Ofe5042ed543bocbf447abe8fabd347" -c:v libx264 -c:a aac -f flv "rtmps://live-api-s.facebook.com:443/rtmp/FB-861980172602212-0-AbwYnUr1GWKVuEUV" 
+./ffmpeg \
+-headers $'Referer: https://www.aflam4you.pro/' \
+-re -i "https://cdn12.kooooora4you.live/p/3166/live/bnnnn111111prroooolive.m3u8?userip=MTk2Ljc1LjgxLjE4MQ==&expires=6727874139&signature=02c0Ofe5042ed543bocbf447abe8fabd347" \
+-c:v libx264 -c:a aac \
+-f flv "rtmp://a.rtmp.youtube.com/live2/3uk1-myf8-7fca-pgrz-db6z"
